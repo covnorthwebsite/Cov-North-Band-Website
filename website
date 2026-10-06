@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coventry North SDA Church Drumline | Rhythm & Precision</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              900: '#070F1E',
+              800: '#0B192C',
+              700: '#1E3E62',
+              600: '#2A5282',
+            },
+            gold: {
+              300: '#FCE788',
+              400: '#F5C842',
+              500: '#D4AF37',
+              600: '#B38F23',
+              700: '#8A6D14',
+            },
+            offwhite: '#F8F9FA',
+            cardlight: '#FFFFFF',
+          },
+          fontFamily: {
+            heading: ['Oswald', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'gold-glow': '0 0 20px rgba(212, 175, 55, 0.35)',
+            'gold-glow-lg': '0 0 35px rgba(212, 175, 55, 0.55)',
+            'navy-deep': '0 10px 30px rgba(7, 15, 30, 0.6)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #070F1E;
+      color: #F8F9FA;
+      overflow-x: hidden;
+    }
+    
+    .font-heading {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    @keyframes pulseWave {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+      50% { opacity: 0.9; transform: scaleY(1.3); }
+    }
+
+    .pulse-bar {
+      animation: pulseWave 1.5s infinite ease-in-out;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #997A15 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-nav {
+      background: rgba(11, 25, 44, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .pad-pressed {
+      transform: scale(0.95);
+      box-shadow: 0 0 25px #D4AF37 !important;
+      background-color: #D4AF37 !important;
+      color: #070F1E !important;
+    }
+
+    .roster-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070F1E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E3E62;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-navy-900">
+
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo & Emblem -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-900 shadow-gold-glow group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-drum text-xl"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-heading text-lg sm:text-xl font-bold tracking-wider text-white group-hover:text-gold-400 transition-colors uppercase leading-none">
+              Coventry North
+            </span>
+            <span class="text-xs tracking-widest text-gold-400 uppercase font-semibold mt-1">
+              SDA Church Drumline
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="text-sm font-medium text-gray-200 hover:text-gold-400 transition-colors">Home</a>
+          <a href="#roster" class="text-sm font-medium text-gray-200 hover:text-gold-400 transition-colors">Team Roster</a>
+          <a href="#quad-fund" class="text-sm font-medium text-gold-400 hover:text-gold-300 font-semibold flex items-center space-x-1">
+            <i class="fa-solid fa-heart text-xs text-red-400 animate-pulse"></i>
+            <span>Quad Fund (£200)</span>
+          </a>
+          <a href="#sound-pad" class="text-sm font-medium text-gray-200 hover:text-gold-400 transition-colors">Sound Studio</a>
+          <a href="#join" class="text-sm font-medium text-gray-200 hover:text-gold-400 transition-colors">Join Us</a>
+        </nav>
+
+        <!-- CTA Header Button -->
+        <div class="hidden lg:flex items-center">
+          <a href="#quad-fund" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-900 font-bold px-5 py-2.5 rounded-full text-sm shadow-gold-glow hover:shadow-gold-glow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+            Donate to Instrument Fund
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-gold-400 focus:outline-none p-2" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-800/95 border-b border-gold-500/20 px-4 pt-3 pb-6 space-y-3">
+      <a href="#home" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-gold-400">Home</a>
+      <a href="#roster" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-gold-400">Team Roster</a>
+      <a href="#quad-fund" class="mobile-link block py-2 text-base font-semibold text-gold-400">Quad Instrument Fund (£200 Target)</a>
+      <a href="#sound-pad" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-gold-400">Interactive Sound Studio</a>
+      <a href="#join" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-gold-400">Join the Ministry</a>
+      <a href="#quad-fund" class="mobile-link block text-center mt-2 bg-gold-500 text-navy-900 font-bold py-3 rounded-lg shadow-gold-glow">
+        Donate Now
+      </a>
+    </div>
+  </header>
+
+  <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-72 h-72 bg-navy-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto space-y-6">
+        
+        <div class="inline-flex items-center space-x-2 bg-navy-700/60 border border-gold-500/30 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-gold-400 backdrop-blur-md">
+          <i class="fa-solid fa-cross text-xs"></i>
+          <span>Coventry North Seventh-day Adventist Church</span>
+        </div>
+
+        <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-wide leading-tight text-white">
+          Praising God Through <span class="gold-gradient-text block mt-1">Rhythm & Precision</span>
+        </h1>
+
+        <p class="text-gray-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto">
+          Welcome to the official home of the Coventry North SDA Church Drumline. We elevate worship, inspire youth, and herald praise through dedicated marching percussion.
+        </p>
+
+        <!-- Dynamic Beat Pulse Visualizer -->
+        <div class="flex items-center justify-center space-x-1.5 py-4 h-16">
+          <div class="w-1.5 bg-gold-500 rounded-full h-8 pulse-bar" style="animation-delay: 0.1s"></div>
+          <div class="w-1.5 bg-gold-400 rounded-full h-12 pulse-bar" style="animation-delay: 0.3s"></div>
+          <div class="w-1.5 bg-gold-300 rounded-full h-6 pulse-bar" style="animation-delay: 0.2s"></div>
+          <div class="w-1.5 bg-gold-500 rounded-full h-14 pulse-bar" style="animation-delay: 0.5s"></div>
+          <div class="w-1.5 bg-gold-400 rounded-full h-10 pulse-bar" style="animation-delay: 0.4s"></div>
+          <div class="w-1.5 bg-gold-300 rounded-full h-16 pulse-bar" style="animation-delay: 0.15s"></div>
+          <div class="w-1.5 bg-gold-500 rounded-full h-7 pulse-bar" style="animation-delay: 0.6s"></div>
+          <div class="w-1.5 bg-gold-400 rounded-full h-12 pulse-bar" style="animation-delay: 0.25s"></div>
+          <div class="w-1.5 bg-gold-300 rounded-full h-5 pulse-bar" style="animation-delay: 0.35s"></div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <a href="#roster" class="w-full sm:w-auto px-8 py-3.5 bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold rounded-xl shadow-gold-glow hover:shadow-gold-glow-lg transition-all duration-300 text-center flex items-center justify-center space-x-2">
+            <span>Meet The Drumline Team</span>
+            <i class="fa-solid fa-arrow-right text-sm"></i>
+          </a>
+          <a href="#quad-fund" class="w-full sm:w-auto px-8 py-3.5 bg-navy-700/80 hover:bg-navy-700 text-white font-semibold rounded-xl border border-gold-500/40 hover:border-gold-400 transition-all duration-300 text-center flex items-center justify-center space-x-2 backdrop-blur-md">
+            <i class="fa-solid fa-drum text-gold-400"></i>
+            <span>Support Quad Fund (£200)</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16 pt-8 border-t border-navy-700/60">
+        <div class="bg-navy-800/60 border border-gold-500/20 rounded-xl p-5 text-center backdrop-blur-sm">
+          <div class="font-heading text-3xl sm:text-4xl font-bold text-gold-400">10</div>
+          <div class="text-xs sm:text-sm text-gray-300 mt-1 uppercase font-medium tracking-wider">Active Drummers</div>
+        </div>
+        <div class="bg-navy-800/60 border border-gold-500/20 rounded-xl p-5 text-center backdrop-blur-sm">
+          <div class="font-heading text-3xl sm:text-4xl font-bold text-gold-400">5</div>
+          <div class="text-xs sm:text-sm text-gray-300 mt-1 uppercase font-medium tracking-wider">Percussion Sections</div>
+        </div>
+        <div class="bg-navy-800/60 border border-gold-500/20 rounded-xl p-5 text-center backdrop-blur-sm">
+          <div class="font-heading text-3xl sm:text-4xl font-bold text-gold-400">£200</div>
+          <div class="text-xs sm:text-sm text-gray-300 mt-1 uppercase font-medium tracking-wider">Quad Set Target</div>
+        </div>
+        <div class="bg-navy-800/60 border border-gold-500/20 rounded-xl p-5 text-center backdrop-blur-sm">
+          <div class="font-heading text-3xl sm:text-4xl font-bold text-gold-400">100%</div>
+          <div class="text-xs sm:text-sm text-gray-300 mt-1 uppercase font-medium tracking-wider">Praise & Glory</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="roster" class="py-20 bg-offwhite text-navy-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold tracking-widest text-navy-600 uppercase bg-gold-500/20 px-3 py-1 rounded-full border border-gold-500/40">
+          Official Team Roster
+        </span>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold uppercase mt-3 text-navy-900 tracking-tight">
+          Meet the Drumline Structure
+        </h2>
+        <p class="text-gray-600 mt-3 text-base sm:text-lg">
+          Our ensemble consists of dedicated musicians structured across 5 specialized marching percussion sections.
+        </p>
+      </div>
+
+      <!-- Filter Category Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+        <button data-filter="all" class="filter-btn active-filter px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-navy-800 text-gold-400 shadow-md">
+          All
+        </button>
+        <button data-filter="snare" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gray-200 text-navy-800 hover:bg-gold-500/20">
+          Snares (3)
+        </button>
+        <button data-filter="tenor" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gray-200 text-navy-800 hover:bg-gold-500/20">
+          Tenors (2)
+        </button>
+        <button data-filter="quad" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gray-200 text-navy-800 hover:bg-gold-500/20">
+          Quad (1)
+        </button>
+        <button data-filter="bass" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gray-200 text-navy-800 hover:bg-gold-500/20">
+          Bass (2)
+        </button>
+        <button data-filter="cymbal" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gray-200 text-navy-800 hover:bg-gold-500/20">
+          Cymbals (2)
+        </button>
+      </div>
+
+      <!-- Roster Grid -->
+      <div id="roster-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- CARD 1: Qiqi (Lead Snare) -->
+        <div class="roster-card bg-cardlight border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden" data-category="snare">
+          <div class="absolute top-0 right-0 bg-gold-500 text-navy-900 font-bold text-xs uppercase px-4 py-1 rounded-bl-xl shadow-sm">
+            Section Leader
+          </div>
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center font-heading text-2xl font-bold border-2 border-gold-500 shadow-inner">
+              QQ
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-navy-900">Qiqi</h3>
+              <p class="text-sm font-semibold text-gold-600 uppercase tracking-wide">Lead Snare Drummer</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 pt-3 text-xs text-gray-600 space-y-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-drum text-navy-700 w-4"></i>
+              <span>High-tension march rudiments & solo stick trick specialist.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-bullhorn text-navy-700 w-4"></i>
+              <span>Directs tempo callouts & cadence synchronization.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Nathanael (Snare) -->
+        <div class="roster-card bg-cardlight border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden" data-category="snare">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center font-heading text-2xl font-bold border-2 border-gold-500/50 shadow-inner">
+              NA
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-navy-900">Nathanael</h3>
+              <p class="text-sm font-semibold text-navy-700 uppercase tracking-wide">Snare Drummer</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 pt-3 text-xs text-gray-600 space-y-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-drum text-navy-700 w-4"></i>
+              <span>Crisp rimshots, rapid rolls & crisp cadence driver.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-music text-navy-700 w-4"></i>
+              <span>Snare Section Core Specialist.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Louis (Snare) -->
+        <div class="roster-card bg-cardlight border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden" data-category="snare">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center font-heading text-2xl font-bold border-2 border-gold-500/50 shadow-inner">
+              LO
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-navy-900">Louis</h3>
+              <p class="text-sm font-semibold text-navy-700 uppercase tracking-wide">Snare Drummer</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 pt-3 text-xs text-gray-600 space-y-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-drum text-navy-700 w-4"></i>
+              <span>Dynamic accent control and strict unison performer.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-sliders text-navy-700 w-4"></i>
+              <span>Rhythmic precision & stick height consistency.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Mansa (Marching Tenor) -->
+        <div class="roster-card bg-cardlight border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden" data-category="tenor">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center font-heading text-2xl font-bold border-2 border-gold-500/50 shadow-inner">
+              MA
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-navy-900">Mansa</h3>
+              <p class="text-sm font-semibold text-navy-700 uppercase tracking-wide">Marching Tenor</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 pt-3 text-xs text-gray-600 space-y-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-layer-group text-navy-700 w-4"></i>
+              <span>Traditional marching tenor line - Melodic drum pitch operator.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-gauge-high text-navy-700 w-4"></i>
+              <span>Fast crossover movement & energetic rhythmic embellishments.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: Elliot (Marching Tenor) -->
+        <div class="roster-card bg-cardlight border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden" data-category="tenor">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center font-heading text-2xl font-bold border-2 border-gold-500/50 shadow-inner">
+              EL
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-navy-900">Elliot</h3>
+              <p class="text-sm font-semibold text-navy-700 uppercase tracking-wide">Marching Tenor</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 pt-3 text-xs text-gray-600 space-y-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-layer-group text-navy-700 w-4"></i>
+              <span>Traditional marching tenor line - Tone builder & timekeeper.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-drumstick-bite text-navy-700 w-4"></i>
+              <span>Melodic counter-rhythms and energetic mallet control.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6: Gwen (Quad Player - Needs Instrument) -->
+        <div class="roster-card bg-gradient-to-br from-navy-900 to-navy-800 text-white rounded-2xl p-6 shadow-xl border-2 border-gold-500 relative overflow-hidden transform hover:-translate-y-1.5 transition-all duration-300" data-category="quad">
+          <div class="absolute top-0 right-0 bg-gold-500 text-navy-900 font-bold text-xs uppercase px-3 py-1 rounded-bl-xl shadow-sm animate-pulse">
+            Needs Quad Set
+          </div>
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-gold-500 text-navy-900 flex items-center justify-center font-heading text-2xl font-bold shadow-gold-glow">
+              GW
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-gold-400">Gwen</h3>
+              <p class="text-sm font-semibold text-gray-200 uppercase tracking-wide">Quad Player</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-300 leading-relaxed mb-4">
+            Our sole Quad multi-drum specialist! Currently leading the appeal for a brand-new multi-tom marching set.
+          </p>
+          <a href="#quad-fund" class="inline-flex items-center justify-center w-full py-2 bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors">
+            <i class="fa-solid fa-hand-holding-dollar mr-2"></i> Support Gwen's Fund (£200 Goal)
+          </a>
+        </div>
+
+        <!-- CARD 7: Sam (Bass Drum) -->
+        <div class="roster-card bg-cardlight border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden" data-category="bass">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center font-heading text-2xl font-bold border-2 border-gold-500/50 shadow-inner">
+              SA
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-navy-900">Sam</h3>
+              <p class="text-sm font-semibold text-navy-700 uppercase tracking-wide">Bass Drummer</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 pt-3 text-xs text-gray-600 space-y-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-heartbeat text-navy-700 w-4"></i>
+              <span>Low-end pulse anchor providing steady church cadence foundation.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-volume-high text-navy-700 w-4"></i>
+              <span>Split-bass tonal runs & deep resonance impact.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 8: Benjamin (Bass Drum) -->
+        <div class="roster-card bg-cardlight border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden" data-category="bass">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center font-heading text-2xl font-bold border-2 border-gold-500/50 shadow-inner">
+              BE
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-navy-900">Benjamin</h3>
+              <p class="text-sm font-semibold text-navy-700 uppercase tracking-wide">Bass Drummer</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 pt-3 text-xs text-gray-600 space-y-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-heartbeat text-navy-700 w-4"></i>
+              <span>Deep sub-rhythm backbone driving processional momentum.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-drumstick-bite text-navy-700 w-4"></i>
+              <span>Powerful accents & synchronized mallet dampening.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 9: KB (Cymbal Player) -->
+        <div class="roster-card bg-cardlight border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden" data-category="cymbal">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center font-heading text-2xl font-bold border-2 border-gold-500/50 shadow-inner">
+              KB
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-navy-900">KB</h3>
+              <p class="text-sm font-semibold text-navy-700 uppercase tracking-wide">Cymbal Player</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 pt-3 text-xs text-gray-600 space-y-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-compact-disc text-navy-700 w-4"></i>
+              <span>High-impact visual crashes, hi-hat chokes & metallic accents.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-sparkles text-navy-700 w-4"></i>
+              <span>Precision visual plate spins & march discipline.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 10: Joyce (Cymbal Player) -->
+        <div class="roster-card bg-cardlight border border-gray-200 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden" data-category="cymbal">
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-16 h-16 rounded-2xl bg-navy-800 text-gold-400 flex items-center justify-center font-heading text-2xl font-bold border-2 border-gold-500/50 shadow-inner">
+              JO
+            </div>
+            <div>
+              <h3 class="font-heading text-2xl font-bold text-navy-900">Joyce</h3>
+              <p class="text-sm font-semibold text-navy-700 uppercase tracking-wide">Cymbal Player</p>
+            </div>
+          </div>
+          <div class="border-t border-gray-100 pt-3 text-xs text-gray-600 space-y-2">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-compact-disc text-navy-700 w-4"></i>
+              <span>Resonant crash technique & synchronized visual displays.</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-bolt text-navy-700 w-4"></i>
+              <span>Dynamic cymbal line choreography & rhythmic accents.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="quad-fund" class="py-20 bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900 text-white relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-gradient-to-r from-navy-800 to-navy-900 border-2 border-gold-500 rounded-3xl p-6 sm:p-10 md:p-12 shadow-navy-deep relative overflow-hidden">
+        
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center space-x-2 bg-gold-500/20 border border-gold-500 px-3 py-1 rounded-full text-xs font-bold text-gold-400">
+              <i class="fa-solid fa-drum"></i>
+              <span>URGENT INSTRUMENT APPEAL</span>
+            </div>
+
+            <h2 class="font-heading text-3xl sm:text-5xl font-bold uppercase leading-tight text-white">
+              Help Buy A New Marching <span class="gold-gradient-text">Quad Drum Set</span> For Gwen!
+            </h2>
+
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+              Our dedicated quad drummer, <strong class="text-gold-400">Gwen</strong>, is currently in vital need of a brand-new multi-tom marching quad drum set to represent Coventry North SDA Church in upcoming youth rallies, community parades, and divine services.
+            </p>
+
+            <div class="bg-navy-900/80 border border-navy-700 p-4 rounded-xl space-y-2 text-xs sm:text-sm text-gray-300">
+              <div class="flex items-center space-x-2 text-gold-400 font-semibold">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Instrument: Lightweight Marching Multi-Tom Quad Set</span>
+              </div>
+              <div class="flex items-center space-x-2 text-gold-400 font-semibold">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Includes: Quad Carrier Harness & Drum Mallets</span>
+              </div>
+              <div class="flex items-center space-x-2 text-gold-400 font-semibold">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Total Target Goal: £200.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Target Counter Card (£0 Raised Initial State) -->
+          <div class="lg:col-span-5 bg-navy-900 border border-gold-500/30 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
+            
+            <div class="text-center space-y-1">
+              <span class="text-xs uppercase font-bold tracking-widest text-gray-400">Campaign Target</span>
+              <div class="font-heading text-4xl sm:text-5xl font-bold text-white">
+                <span id="amount-raised-text" class="text-gold-400">£0</span>
+                <span class="text-xl text-gray-400 font-normal">/ £200</span>
+              </div>
+              <p class="text-xs text-gold-400 font-semibold" id="percent-text">0% of goal funded</p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="w-full bg-navy-700 h-4 rounded-full overflow-hidden p-0.5 border border-gold-500/30">
+                <div id="progress-bar-fill" class="bg-gradient-to-r from-gold-600 via-gold-400 to-gold-300 h-full rounded-full transition-all duration-700 shadow-gold-glow" style="width: 0%;"></div>
+              </div>
+              <div class="flex justify-between text-xs text-gray-400 font-medium">
+                <span>£0 Raised</span>
+                <span id="remaining-text">£200 Needed</span>
+                <span>£200 Goal</span>
+              </div>
+            </div>
+
+            <!-- Interactive Pledge Simulation Buttons -->
+            <div class="space-y-2">
+              <span class="text-xs font-semibold text-gray-300 block text-center">Quick Pledge Simulation:</span>
+              <div class="grid grid-cols-3 gap-2">
+                <button onclick="addPledge(5)" class="py-2 bg-navy-800 hover:bg-gold-500/20 border border-gold-500/30 hover:border-gold-400 rounded-lg text-xs font-bold text-gold-400 transition-all">
+                  + £5
+                </button>
+                <button onclick="addPledge(10)" class="py-2 bg-navy-800 hover:bg-gold-500/20 border border-gold-500/30 hover:border-gold-400 rounded-lg text-xs font-bold text-gold-400 transition-all">
+                  + £10
+                </button>
+                <button onclick="addPledge(25)" class="py-2 bg-navy-800 hover:bg-gold-500/20 border border-gold-500/30 hover:border-gold-400 rounded-lg text-xs font-bold text-gold-400 transition-all">
+                  + £25
+                </button>
+              </div>
+            </div>
+
+            <button id="donate-modal-btn" class="w-full py-4 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-900 font-bold uppercase tracking-wider text-sm rounded-xl shadow-gold-glow transition-all duration-300 flex items-center justify-center space-x-2">
+              <i class="fa-solid fa-heart text-base"></i>
+              <span>Donate Now (£200 Target)</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div id="donate-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-navy-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+    <div class="bg-navy-800 border-2 border-gold-500 rounded-2xl max-w-md w-full p-6 sm:p-8 relative shadow-gold-glow-lg text-white">
+      
+      <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center space-y-3">
+        <div class="w-12 h-12 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center text-xl font-bold mx-auto">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+        <h3 class="font-heading text-2xl font-bold uppercase text-gold-400">Support Gwen's Quad Drums</h3>
+        <p class="text-xs text-gray-300 leading-relaxed">
+          Thank you for supporting the Coventry North SDA Drumline! Contributions go directly towards purchasing the £200 marching quad instrument set.
+        </p>
+      </div>
+
+      <div class="mt-6 space-y-4">
+        <div class="bg-navy-900 p-4 rounded-xl border border-gold-500/20 space-y-2 text-xs">
+          <p class="text-gray-300 font-semibold"><i class="fa-solid fa-church text-gold-400 mr-2"></i><strong>Church Envelope / Direct Giving:</strong></p>
+          <p class="text-gray-400">Mark offering envelope as: <span class="text-gold-400 font-mono font-bold">"Coventry North SDA Drumline - Quad Fund"</span></p>
+        </div>
+
+        <div class="bg-navy-900 p-4 rounded-xl border border-gold-500/20 space-y-2 text-xs">
+          <p class="text-gray-300 font-semibold"><i class="fa-solid fa-building-columns text-gold-400 mr-2"></i><strong>Online Bank Transfer Ref:</strong></p>
+          <p class="text-gray-400 font-mono">Reference: <span class="text-gold-400 font-bold">DRUM-QUAD-GWEN</span></p>
+        </div>
+
+        <button onclick="closeModal()" class="w-full py-3 bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold rounded-xl text-xs uppercase tracking-wider transition-colors">
+          I Have Made A Contribution
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <section id="sound-pad" class="py-20 bg-navy-900 border-t border-b border-navy-700/60 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold tracking-widest text-gold-400 uppercase bg-navy-800 px-3 py-1 rounded-full border border-gold-500/30">
+          Interactive Sound Studio
+        </span>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold uppercase mt-3 text-white tracking-tight">
+          Play The Drumline Beat
+        </h2>
+        <p class="text-gray-300 text-sm sm:text-base mt-2">
+          Tap the pads or use your keyboard keys (<span class="text-gold-400 font-mono">Q, W, E, R, T, Y, A, S, D</span>) to synthesize authentic rudimental marching drum samples directly in your browser!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
+        
+        <!-- Snare Drum Pad -->
+        <button data-sound="snare" data-key="Q" class="drum-pad bg-navy-800 hover:bg-navy-700 border-2 border-gold-500/40 hover:border-gold-400 rounded-2xl p-6 text-center shadow-lg transition-all duration-150 flex flex-col items-center justify-center space-y-3 group">
+          <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-drum"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white uppercase">Snare</span>
+          <span class="text-xs bg-gold-500/20 text-gold-400 font-mono font-bold px-2 py-0.5 rounded border border-gold-500/30">Key: Q</span>
+        </button>
+
+        <!-- Marching Tenor High Pad -->
+        <button data-sound="tenor-hi" data-key="W" class="drum-pad bg-navy-800 hover:bg-navy-700 border-2 border-gold-500/40 hover:border-gold-400 rounded-2xl p-6 text-center shadow-lg transition-all duration-150 flex flex-col items-center justify-center space-y-3 group">
+          <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-cubes"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white uppercase">Tenor High</span>
+          <span class="text-xs bg-gold-500/20 text-gold-400 font-mono font-bold px-2 py-0.5 rounded border border-gold-500/30">Key: W</span>
+        </button>
+
+        <!-- Marching Tenor Low Pad -->
+        <button data-sound="tenor-lo" data-key="E" class="drum-pad bg-navy-800 hover:bg-navy-700 border-2 border-gold-500/40 hover:border-gold-400 rounded-2xl p-6 text-center shadow-lg transition-all duration-150 flex flex-col items-center justify-center space-y-3 group">
+          <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-cubes-stacked"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white uppercase">Tenor Low</span>
+          <span class="text-xs bg-gold-500/20 text-gold-400 font-mono font-bold px-2 py-0.5 rounded border border-gold-500/30">Key: E</span>
+        </button>
+
+        <!-- Quad Drum Tom 1 -->
+        <button data-sound="quad-1" data-key="R" class="drum-pad bg-navy-800 hover:bg-navy-700 border-2 border-gold-500/40 hover:border-gold-400 rounded-2xl p-6 text-center shadow-lg transition-all duration-150 flex flex-col items-center justify-center space-y-3 group">
+          <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white uppercase">Quad 1</span>
+          <span class="text-xs bg-gold-500/20 text-gold-400 font-mono font-bold px-2 py-0.5 rounded border border-gold-500/30">Key: R</span>
+        </button>
+
+        <!-- Quad Drum Tom 2 -->
+        <button data-sound="quad-2" data-key="T" class="drum-pad bg-navy-800 hover:bg-navy-700 border-2 border-gold-500/40 hover:border-gold-400 rounded-2xl p-6 text-center shadow-lg transition-all duration-150 flex flex-col items-center justify-center space-y-3 group">
+          <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white uppercase">Quad 2</span>
+          <span class="text-xs bg-gold-500/20 text-gold-400 font-mono font-bold px-2 py-0.5 rounded border border-gold-500/30">Key: T</span>
+        </button>
+
+        <!-- Quad Drum Tom 3 -->
+        <button data-sound="quad-3" data-key="Y" class="drum-pad bg-navy-800 hover:bg-navy-700 border-2 border-gold-500/40 hover:border-gold-400 rounded-2xl p-6 text-center shadow-lg transition-all duration-150 flex flex-col items-center justify-center space-y-3 group">
+          <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white uppercase">Quad 3</span>
+          <span class="text-xs bg-gold-500/20 text-gold-400 font-mono font-bold px-2 py-0.5 rounded border border-gold-500/30">Key: Y</span>
+        </button>
+
+        <!-- Bass Drum Pulse -->
+        <button data-sound="bass" data-key="A" class="drum-pad bg-navy-800 hover:bg-navy-700 border-2 border-gold-500/40 hover:border-gold-400 rounded-2xl p-6 text-center shadow-lg transition-all duration-150 flex flex-col items-center justify-center space-y-3 group">
+          <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-heartbeat"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white uppercase">Bass Drum</span>
+          <span class="text-xs bg-gold-500/20 text-gold-400 font-mono font-bold px-2 py-0.5 rounded border border-gold-500/30">Key: A</span>
+        </button>
+
+        <!-- Cymbal Crash -->
+        <button data-sound="cymbal" data-key="S" class="drum-pad bg-navy-800 hover:bg-navy-700 border-2 border-gold-500/40 hover:border-gold-400 rounded-2xl p-6 text-center shadow-lg transition-all duration-150 flex flex-col items-center justify-center space-y-3 group">
+          <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-compact-disc"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white uppercase">Cymbal</span>
+          <span class="text-xs bg-gold-500/20 text-gold-400 font-mono font-bold px-2 py-0.5 rounded border border-gold-500/30">Key: S</span>
+        </button>
+
+        <!-- Rimshot Accent -->
+        <button data-sound="rimshot" data-key="D" class="drum-pad bg-navy-800 hover:bg-navy-700 border-2 border-gold-500/40 hover:border-gold-400 rounded-2xl p-6 text-center shadow-lg transition-all duration-150 flex flex-col items-center justify-center space-y-3 group">
+          <div class="w-12 h-12 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <span class="font-heading text-lg font-bold text-white uppercase">Rimshot</span>
+          <span class="text-xs bg-gold-500/20 text-gold-400 font-mono font-bold px-2 py-0.5 rounded border border-gold-500/30">Key: D</span>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="join" class="py-20 bg-offwhite text-navy-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold tracking-widest text-navy-600 uppercase bg-gold-500/20 px-3 py-1 rounded-full border border-gold-500/40">
+          Join Coventry North SDA Drumline
+        </span>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold uppercase mt-3 text-navy-900 tracking-tight">
+          Audition & Ministry Sign-Up
+        </h2>
+        <p class="text-gray-600 text-sm sm:text-base mt-2">
+          Interested in playing snare, tenor, quad, bass, or cymbals? Fill out the recruitment form below to express interest in joining our church team!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Form Column -->
+        <div class="lg:col-span-7 bg-cardlight border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-xl">
+          
+          <form id="recruitment-form" action="https://formspree.io" method="POST" class="space-y-6">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Full Name Field -->
+              <div class="space-y-2">
+                <label for="fullname" class="text-xs uppercase font-bold text-navy-800 tracking-wider block">
+                  Full Name <span class="text-red-500">*</span>
+                </label>
+                <input type="text" id="fullname" name="fullname" required placeholder="e.g. Samuel Adebayo"
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all text-sm text-navy-900">
+              </div>
+
+              <!-- Email Field -->
+              <div class="space-y-2">
+                <label for="email" class="text-xs uppercase font-bold text-navy-800 tracking-wider block">
+                  Email Address <span class="text-red-500">*</span>
+                </label>
+                <input type="email" id="email" name="email" required placeholder="e.g. samuel@example.com"
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all text-sm text-navy-900">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Instrument Dropdown -->
+              <div class="space-y-2">
+                <label for="instrument" class="text-xs uppercase font-bold text-navy-800 tracking-wider block">
+                  Instrument Preference <span class="text-red-500">*</span>
+                </label>
+                <select id="instrument" name="instrument" required
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all text-sm text-navy-900">
+                  <option value="" disabled selected>Select an instrument...</option>
+                  <option value="Snare Drum">Snare Drum</option>
+                  <option value="Marching Tenor">Marching Tenor (Traditional)</option>
+                  <option value="Quad Set">Quad Multi-Tom Set</option>
+                  <option value="Bass Drum">Bass Drum</option>
+                  <option value="Cymbals">Cymbals Line</option>
+                  <option value="General Interest">General Interest / Trainee</option>
+                </select>
+              </div>
+
+              <!-- Experience Level -->
+              <div class="space-y-2">
+                <label for="experience" class="text-xs uppercase font-bold text-navy-800 tracking-wider block">
+                  Experience Level
+                </label>
+                <select id="experience" name="experience"
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all text-sm text-navy-900">
+                  <option value="Beginner / Willing to Learn">Beginner (Willing to learn)</option>
+                  <option value="Intermediate">Intermediate (1-2 years experience)</option>
+                  <option value="Advanced / Rudimental">Advanced Rudimental Drummer</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message Field -->
+            <div class="space-y-2">
+              <label for="message" class="text-xs uppercase font-bold text-navy-800 tracking-wider block">
+                Your Message / Church Affiliation
+              </label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your drumming experience or why you'd like to join Coventry North SDA Drumline..."
+                class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 outline-none transition-all text-sm text-navy-900 resize-none"></textarea>
+            </div>
+
+            <!-- Action Buttons Row -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+              <button type="button" id="preview-btn" class="w-full sm:w-1/2 py-3.5 bg-navy-800 hover:bg-navy-900 text-gold-400 font-bold rounded-xl border border-gold-500/40 text-xs uppercase tracking-wider transition-all flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-eye"></i>
+                <span>Preview Form Data</span>
+              </button>
+
+              <button type="submit" class="w-full sm:w-1/2 py-3.5 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-navy-900 font-bold rounded-xl text-xs uppercase tracking-wider shadow-gold-glow transition-all flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Submit Application</span>
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+
+        <!-- Live Preview Card -->
+        <div class="lg:col-span-5">
+          <div id="preview-panel" class="bg-gradient-to-br from-navy-900 to-navy-800 text-white border-2 border-gold-500 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden transition-all duration-300">
+            
+            <div class="flex items-center justify-between border-b border-gold-500/30 pb-4 mb-6">
+              <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center font-bold text-sm">
+                  <i class="fa-solid fa-id-card"></i>
+                </div>
+                <div>
+                  <h3 class="font-heading text-lg font-bold text-gold-400">Live Application Card</h3>
+                  <p class="text-xs text-gray-400">Real-Time Data Verification</p>
+                </div>
+              </div>
+              <span id="preview-badge" class="px-2.5 py-1 bg-gold-500/20 text-gold-400 text-xs font-bold rounded-full border border-gold-500/40">
+                Draft Mode
+              </span>
+            </div>
+
+            <div class="space-y-4 text-xs sm:text-sm">
+              <div class="bg-navy-900/80 p-3.5 rounded-xl border border-navy-700">
+                <span class="text-xs text-gray-400 block uppercase font-bold">Applicant Name</span>
+                <span id="prev-name" class="font-semibold text-white text-base">Not entered yet</span>
+              </div>
+
+              <div class="bg-navy-900/80 p-3.5 rounded-xl border border-navy-700">
+                <span class="text-xs text-gray-400 block uppercase font-bold">Email Address</span>
+                <span id="prev-email" class="font-mono text-gold-400">Not entered yet</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-navy-900/80 p-3.5 rounded-xl border border-navy-700">
+                  <span class="text-xs text-gray-400 block uppercase font-bold">Instrument</span>
+                  <span id="prev-instrument" class="font-semibold text-gold-300">Not selected</span>
+                </div>
+                <div class="bg-navy-900/80 p-3.5 rounded-xl border border-navy-700">
+                  <span class="text-xs text-gray-400 block uppercase font-bold">Experience</span>
+                  <span id="prev-experience" class="font-semibold text-gray-200">Beginner</span>
+                </div>
+              </div>
+
+              <div class="bg-navy-900/80 p-3.5 rounded-xl border border-navy-700">
+                <span class="text-xs text-gray-400 block uppercase font-bold">Message Notes</span>
+                <p id="prev-message" class="text-gray-300 italic text-xs mt-1">No notes added.</p>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-gold-500/20 flex items-center justify-between text-xs text-gray-400">
+              <span>Coventry North SDA Church Ministry</span>
+              <i class="fa-solid fa-shield-halved text-gold-400"></i>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-navy-900 border-t border-gold-500/20 text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-drum"></i>
+            </div>
+            <span class="font-heading text-xl font-bold text-white uppercase tracking-wider">Coventry North SDA</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Seventh-day Adventist Church Drumline Ministry located in Coventry, UK. Praising the Lord through marching percussion, youth fellowship, and community outreach.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="font-heading text-lg font-bold text-gold-400 uppercase">Navigation Links</h4>
+          <ul class="space-y-1.5 text-xs">
+            <li><a href="#home" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+            <li><a href="#roster" class="hover:text-gold-400 transition-colors">Team Roster</a></li>
+            <li><a href="#quad-fund" class="hover:text-gold-400 transition-colors">Gwen's Quad Instrument Fund (£200 Target)</a></li>
+            <li><a href="#sound-pad" class="hover:text-gold-400 transition-colors">Interactive Beat Studio</a></li>
+            <li><a href="#join" class="hover:text-gold-400 transition-colors">Join Application Form</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2 text-xs">
+          <h4 class="font-heading text-lg font-bold text-gold-400 uppercase">Worship & Practice</h4>
+          <p><i class="fa-solid fa-calendar-days text-gold-400 mr-2"></i>Sabbath Worship: Saturdays 10:00 AM</p>
+          <p><i class="fa-solid fa-drumstick-bite text-gold-400 mr-2"></i>Drumline Practice: Sunday Afternoons</p>
+          <p><i class="fa-solid fa-location-dot text-gold-400 mr-2"></i>Coventry North SDA Church, UK</p>
+        </div>
+
+      </div>
+
+      <div class="border-t border-navy-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-2 sm:space-y-0">
+        <p>&copy; 2026 Coventry North SDA Church Drumline. All rights reserved.</p>
+        <p>Built for God's glory through rhythm & praise.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const rosterCards = document.querySelectorAll('.roster-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-navy-800', 'text-gold-400', 'shadow-md');
+            b.classList.add('bg-gray-200', 'text-navy-800');
+          });
+
+          btn.classList.remove('bg-gray-200', 'text-navy-800');
+          btn.classList.add('bg-navy-800', 'text-gold-400', 'shadow-md');
+
+          const category = btn.getAttribute('data-filter');
+
+          rosterCards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              card.style.display = 'block';
+              card.style.opacity = '1';
+            } else {
+              card.style.display = 'none';
+              card.style.opacity = '0';
+            }
+          });
+        });
+      });
+
+      let currentRaised = 0;
+      const totalTarget = 200;
+
+      window.addPledge = function(amount) {
+        currentRaised += amount;
+        if (currentRaised > totalTarget) currentRaised = totalTarget;
+
+        const percent = Math.min(100, Math.round((currentRaised / totalTarget) * 100));
+        const remaining = Math.max(0, totalTarget - currentRaised);
+
+        document.getElementById('amount-raised-text').innerText = '£' + currentRaised;
+        document.getElementById('percent-text').innerText = percent + '% of goal funded';
+        document.getElementById('progress-bar-fill').style.width = percent + '%';
+        document.getElementById('remaining-text').innerText = '£' + remaining + ' Needed';
+      };
+
+      const modal = document.getElementById('donate-modal');
+      const openModalBtn = document.getElementById('donate-modal-btn');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+
+      openModalBtn.addEventListener('click', () => {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+      });
+
+      closeModalBtn.addEventListener('click', () => {
+        closeModal();
+      });
+
+      window.closeModal = function() {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+      };
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      const fullnameInput = document.getElementById('fullname');
+      const emailInput = document.getElementById('email');
+      const instrumentInput = document.getElementById('instrument');
+      const experienceInput = document.getElementById('experience');
+      const messageInput = document.getElementById('message');
+      const previewBtn = document.getElementById('preview-btn');
+      const previewPanel = document.getElementById('preview-panel');
+
+      const prevName = document.getElementById('prev-name');
+      const prevEmail = document.getElementById('prev-email');
+      const prevInstrument = document.getElementById('prev-instrument');
+      const prevExperience = document.getElementById('prev-experience');
+      const prevMessage = document.getElementById('prev-message');
+      const prevBadge = document.getElementById('preview-badge');
+
+      function updatePreview() {
+        prevName.textContent = fullnameInput.value.trim() || 'Not entered yet';
+        prevEmail.textContent = emailInput.value.trim() || 'Not entered yet';
+        prevInstrument.textContent = instrumentInput.value || 'Not selected';
+        prevExperience.textContent = experienceInput.value || 'Beginner';
+        prevMessage.textContent = messageInput.value.trim() || 'No notes added.';
+
+        if (fullnameInput.value.trim() && emailInput.value.trim() && instrumentInput.value) {
+          prevBadge.textContent = 'Ready to Submit';
+          prevBadge.className = 'px-2.5 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full border border-green-500/40';
+        } else {
+          prevBadge.textContent = 'Draft Mode';
+          prevBadge.className = 'px-2.5 py-1 bg-gold-500/20 text-gold-400 text-xs font-bold rounded-full border border-gold-500/40';
+        }
+      }
+
+      [fullnameInput, emailInput, instrumentInput, experienceInput, messageInput].forEach(elem => {
+        elem.addEventListener('input', updatePreview);
+        elem.addEventListener('change', updatePreview);
+      });
+
+      previewBtn.addEventListener('click', () => {
+        updatePreview();
+        previewPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        previewPanel.classList.add('shadow-gold-glow-lg');
+        setTimeout(() => {
+          previewPanel.classList.remove('shadow-gold-glow-lg');
+        }, 1200);
+      });
+
+      let audioCtx = null;
+
+      function getAudioContext() {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        return audioCtx;
+      }
+
+      function playSound(type) {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+
+        if (type === 'snare') {
+          const osc = ctx.createOscillator();
+          const gainOsc = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(180, now);
+          osc.frequency.exponentialRampToValueAtTime(60, now + 0.1);
+          gainOsc.gain.setValueAtTime(0.7, now);
+          gainOsc.gain.exponentialRampToValueAtTime(0.01, now + 0.12);
+          osc.connect(gainOsc);
+          gainOsc.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.12);
+
+          const bufferSize = ctx.sampleRate * 0.15;
+          const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+
+          const noise = ctx.createBufferSource();
+          noise.buffer = buffer;
+          const noiseFilter = ctx.createBiquadFilter();
+          noiseFilter.type = 'highpass';
+          noiseFilter.frequency.value = 1000;
+          const gainNoise = ctx.createGain();
+          gainNoise.gain.setValueAtTime(0.8, now);
+          gainNoise.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+
+          noise.connect(noiseFilter);
+          noiseFilter.connect(gainNoise);
+          gainNoise.connect(ctx.destination);
+          noise.start(now);
+
+        } else if (type === 'tenor-hi' || type === 'tenor-lo' || type.startsWith('quad')) {
+          let freq = 220;
+          if (type === 'tenor-hi') freq = 280;
+          if (type === 'tenor-lo') freq = 190;
+          if (type === 'quad-1') freq = 320;
+          if (type === 'quad-2') freq = 240;
+          if (type === 'quad-3') freq = 160;
+
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+          osc.frequency.exponentialRampToValueAtTime(freq * 0.5, now + 0.18);
+
+          gain.gain.setValueAtTime(0.9, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.2);
+
+        } else if (type === 'bass') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(110, now);
+          osc.frequency.exponentialRampToValueAtTime(35, now + 0.35);
+
+          gain.gain.setValueAtTime(1.0, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.4);
+
+        } else if (type === 'cymbal') {
+          const bufferSize = ctx.sampleRate * 0.4;
+          const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+
+          const noise = ctx.createBufferSource();
+          noise.buffer = buffer;
+          const filter = ctx.createBiquadFilter();
+          filter.type = 'highpass';
+          filter.frequency.value = 4500;
+
+          const gain = ctx.createGain();
+          gain.gain.setValueAtTime(0.6, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+
+          noise.connect(filter);
+          filter.connect(gain);
+          gain.connect(ctx.destination);
+          noise.start(now);
+
+        } else if (type === 'rimshot') {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(400, now);
+          osc.frequency.exponentialRampToValueAtTime(120, now + 0.05);
+
+          gain.gain.setValueAtTime(0.9, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.06);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.06);
+        }
+      }
+
+      const drumPads = document.querySelectorAll('.drum-pad');
+      drumPads.forEach(pad => {
+        const soundType = pad.getAttribute('data-sound');
+
+        const triggerPad = () => {
+          playSound(soundType);
+          pad.classList.add('pad-pressed');
+          setTimeout(() => pad.classList.remove('pad-pressed'), 150);
+        };
+
+        pad.addEventListener('click', triggerPad);
+      });
+
+      const keyMap = {
+        'q': 'snare',
+        'w': 'tenor-hi',
+        'e': 'tenor-lo',
+        'r': 'quad-1',
+        't': 'quad-2',
+        'y': 'quad-3',
+        'a': 'bass',
+        's': 'cymbal',
+        'd': 'rimshot'
+      };
+
+      document.addEventListener('keydown', (e) => {
+        if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+
+        const key = e.key.toLowerCase();
+        if (keyMap[key]) {
+          const sound = keyMap[key];
+          playSound(sound);
+
+          const matchingPad = document.querySelector(`.drum-pad[data-sound="${sound}"]`);
+          if (matchingPad) {
+            matchingPad.classList.add('pad-pressed');
+            setTimeout(() => matchingPad.classList.remove('pad-pressed'), 150);
+          }
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>
